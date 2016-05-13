@@ -125,7 +125,15 @@ uniq(names, function(uniqArr){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function each(arr, cb) {
+  var indice;
+  var item;
+  for (var i = 0; i < arr.length; i++) {
+    item = arr[i];
+    indice = i;
+    cb(item, indice);
+  }
+}
 
 
     //Code Here for each
@@ -140,8 +148,14 @@ each(names, function(item, indice){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-function getUserbyId(arr, str, cb) {
-  var user = arr[str];
+function getUserById(arr, str, cb) {
+  var user;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === str) {
+      user = arr[i];
+    }
+  }
+cb(user);
 }
 
 
