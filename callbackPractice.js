@@ -1,16 +1,16 @@
 /* In this repo your job is to write functions to make each function call work properly.
-Below is a sample problem 
+Below is a sample problem
 
   //code here for sayHi
 
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay);
    });
-   
 
-and what you should write is the sayHi function that makes the code above work, 
-    
-    
+
+and what you should write is the sayHi function that makes the code above work,
+
+
    var sayHi = function(str, cb){
     cb(str);
    }
@@ -18,14 +18,17 @@ and what you should write is the sayHi function that makes the code above work,
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay); //should alert ('Hi Katie')'
    });
-    
-    
+
+
 */
 
-
+function first(arr, cb) {
+  var firstName = arr[0];
+  cb(firstName);
+}
 
   //Code Here for first
-  
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -36,7 +39,10 @@ first(names, function(firstName){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function last(arr, cb) {
+  var lastName = arr[arr.length-1];
+  cb(lastName);
+}
 
 
   //Code Here for last
@@ -51,8 +57,10 @@ last(names, function(lastName){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
+function multiply (x, y, cb) {
+  var answer = x * y;
+  cb(answer);
+}
 
 
 
@@ -68,7 +76,13 @@ multiply(4, 3, function(answer){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function contains(arr, str, cb) {
+  var result = true;
+  if (arr.indexOf(str) === -1) {
+    result = false;
+  }
+  cb(result);
+}
 
 
 
@@ -88,7 +102,15 @@ contains(names, 'Colt', function(result){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function uniq(arr, cb) {
+  var uniqArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (uniqArr.indexOf(arr[i]) === -1) {
+      uniqArr.push(arr[i]);
+    }
+  }
+  cb(uniqArr);
+}
 
 
     //Code Here for uniq
@@ -118,7 +140,9 @@ each(names, function(item, indice){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+function getUserbyId(arr, str, cb) {
+  var user = arr[str];
+}
 
 
 
@@ -146,5 +170,5 @@ var users = [
 ];
 
 getUserById(users, '16t', function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
